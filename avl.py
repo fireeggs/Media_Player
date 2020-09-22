@@ -135,7 +135,7 @@ def right_rotate(node):
             if node.is_left_child():
                 node.parent.left = node.left
                 node.left.parent = node.parent
-                return help_riht_rotate(node)
+                return help_right_rotate(node)
             else:  # as node is right child of it's parent
                 node.parent.right = node.left
                 node.left.parent = node.parent
