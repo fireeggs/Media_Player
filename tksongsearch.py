@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from avl import *
 from song import *
+import sys
 
 
 class SongSearchApp:
@@ -62,14 +63,16 @@ class SongSearchApp:
                 self.listbox1.insert(END, item)
             for item in artists.starts_with(self.search.get()):
                 self.listbox2.insert(END, item)
-
+    
+    # update Recursion depth limit 
+    sys.setrecursionlimit(100000)
 
 if __name__ == '__main__':
 
     songs = AVLTree()
     artists = AVLTree()
 
-    file = open("100_sorted_tracks.txt", 'r')
+    file = open("10000_sorted_tracks.txt", 'r')
     data = file.readlines()
     l = len(data)
     print("Loading {:d} songs".format(l))
